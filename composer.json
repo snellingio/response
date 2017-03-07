@@ -1,0 +1,25 @@
+{
+    "name": "snelling/response",
+    "description": "Simple HTTP response object",
+    "keywords": ["request", "snelling", "onroi"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Snelling",
+            "email": "sam@onroi.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+		"php": "7.*",
+        "league/plates": "^3.3"
+    },
+	"require-dev": {
+		"phpunit/phpunit": "5.2.*"
+    },
+	"autoload": {
+        "psr-4": {
+            "Snelling\\": "src/"
+        }
+    }
+}
