@@ -1,7 +1,7 @@
 {
     "name": "snelling/response",
     "description": "Simple HTTP response object",
-    "keywords": ["request", "snelling", "onroi"],
+    "keywords": ["response", "snelling", "onroi"],
     "license": "MIT",
     "authors": [
         {
