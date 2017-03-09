@@ -8,7 +8,7 @@ use League\Plates\Engine as View;
 class Response
 {
 
-    public $view;
+    private $view;
 
     private $body;
 
@@ -152,8 +152,7 @@ class Response
 
         return true;
     }
-
-
+    
     /**
      * @param string $http_host
      * @param string $request_uri
@@ -186,7 +185,8 @@ class Response
      */
     public function render(string $template, array $parameters = [], string $format = 'html'): bool
     {
-        $view = $this->view->render($template, $parameters);
+        $this->view->addData($parameters);
+        $view = $this->view->render($template);
         if ($format === 'html') {
             return $this->html($view);
         }
@@ -255,5 +255,16 @@ class Response
         $this->setBody($data);
 
         return $this->output();
+    }
+
+    /**
+     * @param array $data
+     * @return bool
+     */
+    public function addViewData(array $data): bool
+    {
+        $this->view->addData($data);
+
+        return true;
     }
 }
